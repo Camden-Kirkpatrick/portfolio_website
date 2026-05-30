@@ -6,7 +6,11 @@ import { BiDownload } from 'react-icons/bi'
 import { FaCode } from 'react-icons/fa'
 import { HiBars3BottomRight } from 'react-icons/hi2'
 
-const Nav = () => {
+type NavProps = {
+    openMobileNav: () => void;
+}
+
+const Nav = ({openMobileNav}: NavProps) => {
 
     // Track whether the nav should show a background (true once scrolled past 90px).
     // useState returns [currentValue, setterFunction]. Starts as false.
@@ -60,7 +64,7 @@ const Nav = () => {
                     <span>Download Resume</span>
                 </button>
                 {/* Burger Menu */}
-                <HiBars3BottomRight className='w-8 h-8 cursor-pointer text-white lg:hidden' />
+                <HiBars3BottomRight onClick={openMobileNav} className='w-8 h-8 cursor-pointer text-white lg:hidden' />
             </div>
         </div>
     </div>

@@ -3,13 +3,21 @@ import Link from 'next/link'
 import React from 'react'
 import { CgClose } from 'react-icons/cg';
 
-const MobileNav = () => {
+type NavProps = {
+  showMobileNav: boolean;
+  closeMobileNav: () => void;
+}
+
+const MobileNav = ({showMobileNav, closeMobileNav}: NavProps) => {
+
+  const mobileNavTransform = showMobileNav ? "translate-x-0" : "translate-x-[100%]";
+
   return (
     <div>
       {/* overlay */}
-      <div className='fixed inset-0 transform transition-all right-0 duration-500 z-100002 bg-black opacity-70 w-full h-screen'></div>
+      <div className={`fixed inset-0 ${mobileNavTransform} transform transition-all right-0 duration-500 z-100002 bg-black opacity-70 w-full h-screen`}></div>
       {/* nav links */}
-      <div className='text-white fixed justify-center flex flex-col h-full transfrom transition-all duration-500 delay-300 w-[80%] sm:w-[60%] bg-cyan-800 space-y-6 z-100050 right-0'>
+      <div className={`text-white ${mobileNavTransform} fixed justify-center flex flex-col h-full transform transition-all duration-500 delay-300 w-[80%] sm:w-[60%] bg-cyan-800 space-y-6 z-100050 right-0`}>
         {NavLinks.map((link) => {
             return (
                 <Link key={link.id} href={link.url}>
@@ -18,7 +26,7 @@ const MobileNav = () => {
             );
         })}
         {/* cross icon */}
-      <CgClose className='absolute top-[0.7rem] right-[1.4rem] sm:w-8 sm:h-8 w-6 h-6' />
+      <CgClose onClick={closeMobileNav} className='absolute top-[0.7rem] right-[1.4rem] sm:w-8 sm:h-8 w-6 h-6' />
       </div>
     </div>
   );
