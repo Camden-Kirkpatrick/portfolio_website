@@ -1,5 +1,7 @@
+'use client';
 import React from 'react'
 import Image from 'next/image'
+import Typewriter from 'typewriter-effect'
 
 const Hero = () => {
   return (
@@ -11,6 +13,25 @@ const Hero = () => {
               <br />
               <span className='text-cyan-200'>constantly learning</span>
             </h1>
+            <h2 className='mt-5 text-sm px-2 text-center sm:text-2xl font-medium flex items-center'>
+              Hi! I'm Camden - A Passionate 
+              <span className='text-cyan-200 font-bold'>
+                <Typewriter options={{
+                  strings: [
+                    'Frontend Developer',
+                    'Backend Developer',
+                    'Web Developer',
+                    'Game Developer'
+                  ],
+                  autoStart: true,
+                  loop: true,
+                  delay: 75,
+                  deleteSpeed: 50,
+                  wrapperClassName: 'pl-2',
+                }}
+                />
+              </span>
+            </h2>
         </div>
     </div>
   )
