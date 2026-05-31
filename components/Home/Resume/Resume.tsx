@@ -25,6 +25,20 @@ const Resume = () => {
                     />
                 </div>
             </div>
+            {/* Education */}
+            <div>
+                <h1 className='text-3xl sm:text-4xl font-bold text-white'>
+                    My <span className='text-cyan-200'>Education</span>
+                </h1>
+                <div className='mt-10'>
+                    <ResumeCard 
+                        Icon={BiBadge}
+                        role="Associate of Applied Science, in Computer Information Systems"
+                        date="Aug 2023 - May 2025"
+                        description='Des Moines Area Community College'
+                    />
+                </div>
+            </div>
         </div>
     </div>
   )
