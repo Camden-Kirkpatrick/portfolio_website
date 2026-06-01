@@ -9,7 +9,11 @@ const Projects = () => {
         </h1>
         <div className='w-[70%] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 mt-16'>
             {/* First project */}
-            <div>
+            <div
+                data-aos='fade-up'
+                data-aos-anchor-placement='top-center'
+                data-aos-delay="0"
+            >
                 <Image
                     src='/images/p1.jpg'
                     alt='img' width={800}
@@ -20,7 +24,11 @@ const Projects = () => {
                 <h1 className='pt-2 font-medium text-white/80'>Lorem ipsum dolor sit amet.</h1>
             </div>
             {/* Second project */}
-            <div>
+            <div
+                data-aos='fade-up'
+                data-aos-anchor-placement='top-center'
+                data-aos-delay="100"
+            >
                 <Image
                     src='/images/p2.jpg'
                     alt='img' width={800}
