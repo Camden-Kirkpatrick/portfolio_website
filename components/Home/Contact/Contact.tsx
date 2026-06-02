@@ -36,15 +36,27 @@ const Contact = () => {
                 </div>
                 {/* Social icons */}
                 <div className='flex items-center mt-8 space-x-3'>
-                    <div className='w-14 h-14 bg-blue-950/60 rounded-full flex items-center justify-center cursor-pointer flex-col hover:bg-blue-800 transition-all duration-300'>
+                    <a
+                        href='https://www.linkedin.com/in/camdenckirkpatrick/'
+                        target="_blank"
+                        className='w-14 h-14 bg-blue-950/60 rounded-full flex items-center justify-center cursor-pointer flex-col hover:bg-blue-800 transition-all duration-300'
+                    >
                         <FaLinkedin className='text-white w-6 h-6'/>
-                    </div>
-                    <div className='w-14 h-14 bg-blue-950/60 rounded-full flex items-center justify-center cursor-pointer flex-col hover:bg-black transition-all duration-300'>
+                    </a>
+                    <a 
+                        href='https://github.com/Camden-Kirkpatrick'
+                        target="_blank"
+                        className='w-14 h-14 bg-blue-950/60 rounded-full flex items-center justify-center cursor-pointer flex-col hover:bg-black transition-all duration-300'
+                    >
                         <FaGithub className='text-white w-6 h-6'/>
-                    </div>
-                    <div className='w-14 h-14 bg-blue-950/60 rounded-full flex items-center justify-center cursor-pointer flex-col hover:bg-red-600 transition-all duration-300'>
+                    </a>
+                    <a 
+                        href='https://www.youtube.com/@CamCodesYT'
+                        target="_blank"
+                        className='w-14 h-14 bg-blue-950/60 rounded-full flex items-center justify-center cursor-pointer flex-col hover:bg-red-600 transition-all duration-300'
+                    >
                         <FaYoutube className='text-white w-6 h-6'/>
-                    </div>
+                    </a>
                 </div>
             </div>
             {/* Form */}
