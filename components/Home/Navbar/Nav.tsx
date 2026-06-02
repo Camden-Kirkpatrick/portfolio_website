@@ -59,10 +59,14 @@ const Nav = ({openMobileNav}: NavProps) => {
             {/* buttons */}
             <div className='flex items-center space-x-4'>
                 {/* Resume button */}
-                <button className='px-8 py-3.5 text-sm cursor-pointer rounded-lg bg-blue-800 hover:bg-blue-900 transition-all duration-300 text-white flex items-center space-x-2'>
+                <a
+                    href='/Camden_Kirkpatrick_Resume.pdf'
+                    download='Camden_Kirkpatrick_Resume.pdf'
+                    className='px-8 py-3.5 text-sm cursor-pointer rounded-lg bg-blue-800 hover:bg-blue-900 transition-all duration-300 text-white flex items-center space-x-2'
+                >
                     <BiDownload className='w-5 h-5 '/>
                     <span>Download Resume</span>
-                </button>
+                </a>
                 {/* Burger Menu */}
                 <HiBars3BottomRight onClick={openMobileNav} className='w-8 h-8 cursor-pointer text-white lg:hidden' />
             </div>
