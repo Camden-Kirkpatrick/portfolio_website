@@ -1,8 +1,48 @@
-import React from 'react'
+"use client";
+import React, { useState } from 'react';
 import { BiEnvelope, BiMap, BiPhone } from 'react-icons/bi';
 import { FaGithub, FaLinkedin, FaYoutube } from 'react-icons/fa';
 
 const Contact = () => {
+  // State for the form
+  const [form, setForm] = useState({ name: '', email: '', subject: '', message: '', website: '' })
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const [errorMsg, setErrorMsg] = useState('');
+
+  // One handler for all inputs (uses input's name attribute)
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  // Submit handler
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('sending');
+    setErrorMsg('');
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+
+      const data = await res.json();
+      if (!res.ok) {
+        setStatus('error');
+        setErrorMsg(data.error || 'Something went wrong.');
+        return;
+      }
+
+      setStatus('success');
+      setForm({ name: '', email: '', subject: '', message: '', website: '' });
+    } catch {
+      setStatus('error');
+      setErrorMsg('Network error. Please try again.');
+    }
+  };
+
+
   return (
     <div className='pt-16 pb-16'>
         <div className='w-[90%] md:w-[80%] lg:w-[70%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center'>
@@ -60,30 +100,75 @@ const Contact = () => {
                 </div>
             </div>
             {/* Form */}
-            <div
-                data-aos='zoom-in'
-                data-aos-anchor-placement='top-center'
-                className='md:p-10 p-5 bg-[#131332] rounded-lg'
-            >
-                <input
-                    type="text"
-                    placeholder='Name'
-                    className='px-4 py-3.5 mt-6 bg-[#363659] text-white outline-none rounded-md w-full placeholder:text-white/70'
-                />
-                <input
-                    type="email"
-                    placeholder='Email Address'
-                    className='px-4 py-3.5 mt-6 bg-[#363659] text-white outline-none rounded-md w-full placeholder:text-white/70'
-                />
-                <textarea
-                    placeholder='Your Message'
-                    className='px-4 py-3.5 mt-6 bg-[#363659] text-white outline-none rounded-md w-full placeholder:text-white/70 h-[10rem]'
-                >
-                </textarea>
-                <button className='mt-8 px-12 py-4 bg-blue-950 hover:bg-blue-900 transition-all duration-300 cursor-pointer text-white rounded-full'>
-                    Send Message
-                </button>
-            </div>
+            <form
+                    onSubmit={handleSubmit}
+                    data-aos='zoom-in'
+                    data-aos-anchor-placement='top-center'
+                    className='md:p-10 p-5 bg-[#131332] rounded-lg'
+                    >
+                    <input
+                        type="text"
+                        name="name"
+                        value={form.name}
+                        onChange={handleChange}
+                        required
+                        placeholder='Name'
+                        className='px-4 py-3.5 mt-6 bg-[#363659] text-white outline-none rounded-md w-full placeholder:text-white/70'
+                    />
+                    <input
+                        type="text"
+                        name="subject"
+                        value={form.subject}
+                        onChange={handleChange}
+                        required
+                        placeholder='Subject'
+                        className='px-4 py-3.5 mt-6 bg-[#363659] text-white outline-none rounded-md w-full placeholder:text-white/70'
+                    />
+                    <input
+                        type="email"
+                        name="email"
+                        value={form.email}
+                        onChange={handleChange}
+                        required
+                        placeholder='Email Address'
+                        className='px-4 py-3.5 mt-6 bg-[#363659] text-white outline-none rounded-md w-full placeholder:text-white/70'
+                    />
+                    <textarea
+                        name="message"
+                        value={form.message}
+                        onChange={handleChange}
+                        required
+                        placeholder='Your Message'
+                        className='px-4 py-3.5 mt-6 bg-[#363659] text-white outline-none rounded-md w-full placeholder:text-white/70 h-40'
+                    />
+
+                    {/* Honeypot */}
+                    <input
+                        type="text"
+                        name="website"
+                        tabIndex={-1}
+                        autoComplete="off"
+                        style={{ position: 'absolute', left: '-9999px', opacity: 0 }}
+                        aria-hidden="true"
+                        value={form.website || ''}
+                        onChange={handleChange}
+                    />
+
+                    <button
+                        type="submit"
+                        disabled={status === 'sending'}
+                        className='mt-8 px-12 py-4 bg-blue-950 hover:bg-blue-900 transition-all duration-300 cursor-pointer text-white rounded-full disabled:opacity-50'
+                    >
+                        {status === 'sending' ? 'Sending...' : 'Send Message'}
+                    </button>
+
+                    {status === 'success' && (
+                        <p className='mt-4 text-green-400'>Thanks! I'll get back to you soon.</p>
+                    )}
+                    {status === 'error' && (
+                        <p className='mt-4 text-red-400'>{errorMsg}</p>
+                    )}
+                </form>
         </div>
     </div>
   )
