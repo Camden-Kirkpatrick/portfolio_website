@@ -20,12 +20,8 @@ const Resume = () => {
                     <ResumeCard
                         Icon={FaCodepen}
                         role="Deli Clerk" 
-                        description='Fareway'
-                    />
-                    <ResumeCard
-                        Icon={FaReact}
-                        role="Cashier / Warehouse"
-                        description='Hobby Lobby'
+                        description='Fareway · Deli prep, customer service, food safety.'
+                        date='2023 - Present'
                     />
                 </div>
             </div>
@@ -44,7 +40,7 @@ const Resume = () => {
                         Icon={BiBadge}
                         role="Associate of Applied Science, in Computer Information Systems"
                         date="Aug 2023 - May 2025"
-                        description='Des Moines Area Community College'
+                        description="Des Moines Area Community College · GPA 3.97 / 4.00 · Dean's List & President's List"
                     />
                 </div>
             </div>

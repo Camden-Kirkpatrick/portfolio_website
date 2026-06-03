@@ -1,9 +1,29 @@
 'use client';
 import React from 'react';
-import { SiJavascript, SiNextdotjs, SiNodedotjs, SiReact, SiTailwindcss, SiTypescript } from 'react-icons/si';
+import { SiC, SiCplusplus, SiFastapi, SiGit, SiJavascript, SiMysql, SiOpenjdk, SiPython, SiReact} from 'react-icons/si';
 import Tilt from 'react-parallax-tilt';
 
 const skills = [
+    {
+        name: 'Python',
+        icon: <SiPython/>
+    },
+    {
+        name: 'C',
+        icon: <SiC/>
+    },
+    {
+        name: 'C++',
+        icon: <SiCplusplus/>
+    },
+    {
+        name: 'SQL',
+        icon: <SiMysql/>
+    },
+    {
+        name: 'Java',
+        icon: <SiOpenjdk/>
+    },
     {
         name: 'JavaScript',
         icon: <SiJavascript/>
@@ -13,20 +33,12 @@ const skills = [
         icon: <SiReact />
     },
     {
-        name: 'Next.js',
-        icon: <SiNextdotjs />
+        name: 'FastAPI',
+        icon: <SiFastapi />
     },
     {
-        name: 'Node.js',
-        icon: <SiNodedotjs />
-    },
-    {
-        name: 'Tailwind CSS',
-        icon: <SiTailwindcss />
-    },
-    {
-        name: 'TypeScript',
-        icon: <SiTypescript />
+        name: 'Git',
+        icon: <SiGit />
     },
 ]
 
