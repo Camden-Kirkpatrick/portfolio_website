@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { SiC, SiCplusplus, SiFastapi, SiGit, SiJavascript, SiMysql, SiOpenjdk, SiPython, SiReact} from 'react-icons/si';
+import { SiC, SiCplusplus, SiFastapi, SiGit, SiJavascript, SiMysql, SiNextdotjs, SiOpenjdk, SiPython, SiReact, SiTailwindcss} from 'react-icons/si';
 import Tilt from 'react-parallax-tilt';
 
 const skills = [
@@ -31,6 +31,14 @@ const skills = [
     {
         name: 'React JS',
         icon: <SiReact />
+    },
+    {
+        name: 'Next.js',
+        icon: <SiNextdotjs />
+    },
+    {
+        name: 'Tailwind CSS',
+        icon: <SiTailwindcss />
     },
     {
         name: 'FastAPI',

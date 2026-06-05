@@ -25,7 +25,7 @@ const Home = () => {
   }, [])
 
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-x-clip">
       <section id="home"><Hero /></section>
       <section id="resume"><Resume /></section>
       <section id="projects"><Projects /></section>

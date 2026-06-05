@@ -1,5 +1,4 @@
 import { NavLinks } from '@/constant/constant'
-import Link from 'next/link'
 import React from 'react'
 import { CgClose } from 'react-icons/cg';
 
@@ -20,9 +19,9 @@ const MobileNav = ({showMobileNav, closeMobileNav}: NavProps) => {
       <div className={`text-white ${mobileNavTransform} fixed justify-center flex flex-col h-full transform transition-all duration-500 delay-300 w-[80%] sm:w-[60%] bg-cyan-800 space-y-6 z-100050 right-0`}>
         {NavLinks.map((link) => {
             return (
-                <Link key={link.id} href={link.url}>
+                <a key={link.id} href={link.url} onClick={closeMobileNav}>
                     <p className='text-white w-fit text-xl ml-12 border-b-[1.5px] pb-1 border-white sm:text-[30px]'>{link.label}</p>
-                </Link>
+                </a>
             );
         })}
         {/* cross icon */}
