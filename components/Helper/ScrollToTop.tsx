@@ -21,14 +21,14 @@ const ScrollToTop = () => {
     // Scroll to top function
     const scrollToTop = () => {
         const start = window.scrollY;
-        const duration = 800;
+        const duration = 250;
         const startTime = performance.now();
-        const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
+        const easeOutQuad = (t: number) => 1 - (1 - t) * (1 - t);
 
         const animate = (now: number) => {
             const elapsed = now - startTime;
             const progress = Math.min(elapsed / duration, 1);
-            window.scrollTo(0, start * (1 - easeOutCubic(progress)));
+            window.scrollTo(0, start * (1 - easeOutQuad(progress)));
             if (progress < 1) requestAnimationFrame(animate);
         };
 
