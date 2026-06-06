@@ -4,6 +4,10 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  overflow-x: clip;
+}
+
 section[id] {
   scroll-margin-top: 12vh;
 }

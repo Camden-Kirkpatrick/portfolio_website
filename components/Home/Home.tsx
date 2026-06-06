@@ -25,13 +25,13 @@ const Home = () => {
   }, [])
 
   return (
-    <div className="overflow-x-clip">
+    <>
       <section id="home"><Hero /></section>
       <section id="resume"><Resume /></section>
       <section id="projects"><Projects /></section>
       <section id="skills"><Skills /></section>
       <section id="contact"><Contact /></section>
-    </div>
+    </>
   )
 }
 
