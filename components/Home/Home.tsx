@@ -22,6 +22,27 @@ const Home = () => {
     };
 
     initAOS();
+
+    // Recalculate AOS trigger positions once everything has finished loading.
+    // Without this, AOS measures positions before images load — when the
+    // images finish loading and push content down, the trigger points are
+    // stale and sections like Skills/Contact never reveal.
+    const refresh = () => AOS.refresh();
+    window.addEventListener('load', refresh);
+    window.addEventListener('resize', refresh);
+    window.addEventListener('hashchange', refresh);
+    // Also refresh once any pending images finish, in case 'load' already fired.
+    Promise.all(
+      Array.from(document.images)
+        .filter(img => !img.complete)
+        .map(img => new Promise(res => { img.onload = img.onerror = res; }))
+    ).then(refresh);
+
+    return () => {
+      window.removeEventListener('load', refresh);
+      window.removeEventListener('resize', refresh);
+      window.removeEventListener('hashchange', refresh);
+    };
   }, [])
 
   return (
