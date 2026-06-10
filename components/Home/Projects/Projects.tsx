@@ -164,6 +164,34 @@ const Projects = () => {
                     </a>
                 </div>
             </div>
+            {/* Sixth project */}
+            <div
+                data-aos='fade-up'
+                data-aos-anchor-placement='top-center'
+                data-aos-delay="100"
+            >
+                <Image
+                    src='/images/movie-app.png'
+                    alt='img'
+                    width={800}
+                    height={650}
+                    className='rounded-lg'
+                />
+                <h1 className='mt-4 text-xl sm:text-2xl font-semibold text-white'>Portfolio Website</h1>
+                <p className='pt-2 font-medium text-white/80'>
+                    React app for browsing and searching movies via the TMDB API. Save favorites that persist across sessions with localStorage, managed through the React Context API. Built with React 19, Vite, and React Router, deployed on Vercel.
+                </p>
+                <div className='pt-3 flex gap-4'>
+                    <a
+                        href='https://github.com/Camden-Kirkpatrick/react-movie-app'
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className='text-cyan-300 hover:text-cyan-200 font-medium'
+                    >
+                        GitHub →
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
   )
