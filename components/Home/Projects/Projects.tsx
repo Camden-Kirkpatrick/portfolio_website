@@ -183,6 +183,14 @@ const Projects = () => {
                 </p>
                 <div className='pt-3 flex gap-4'>
                     <a
+                        href='https://camden-react-movie-app.vercel.app/'
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className='text-cyan-300 hover:text-cyan-200 font-medium'
+                    >
+                        Live →
+                    </a>
+                    <a
                         href='https://github.com/Camden-Kirkpatrick/react-movie-app'
                         target='_blank'
                         rel='noopener noreferrer'
