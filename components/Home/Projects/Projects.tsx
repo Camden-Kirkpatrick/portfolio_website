@@ -76,7 +76,7 @@ const Projects = () => {
             <div
                 data-aos='fade-up'
                 data-aos-anchor-placement='top-center'
-                data-aos-delay="100"
+                data-aos-delay="200"
             >
                 <Image
                     src='/images/helpdesk.png'
@@ -112,7 +112,7 @@ const Projects = () => {
             <div
                 data-aos='fade-up'
                 data-aos-anchor-placement='top-center'
-                data-aos-delay="100"
+                data-aos-delay="300"
             >
                 <Image
                     src='/images/bank_project.png'
@@ -140,7 +140,7 @@ const Projects = () => {
             <div
                 data-aos='fade-up'
                 data-aos-anchor-placement='top-center'
-                data-aos-delay="100"
+                data-aos-delay="400"
             >
                 <Image
                     src='/images/portfolio.png'
@@ -168,7 +168,7 @@ const Projects = () => {
             <div
                 data-aos='fade-up'
                 data-aos-anchor-placement='top-center'
-                data-aos-delay="100"
+                data-aos-delay="500"
             >
                 <Image
                     src='/images/movie-app.png'
