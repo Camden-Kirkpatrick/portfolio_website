@@ -177,7 +177,7 @@ const Projects = () => {
                     height={650}
                     className='rounded-lg'
                 />
-                <h1 className='mt-4 text-xl sm:text-2xl font-semibold text-white'>Portfolio Website</h1>
+                <h1 className='mt-4 text-xl sm:text-2xl font-semibold text-white'>Movie App</h1>
                 <p className='pt-2 font-medium text-white/80'>
                     React app for browsing and searching movies via the TMDB API. Save favorites that persist across sessions with localStorage, managed through the React Context API. Built with React 19, Vite, and React Router, deployed on Vercel.
                 </p>
